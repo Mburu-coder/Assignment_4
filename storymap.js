@@ -29,7 +29,7 @@ function changeStory(position, title, id, content) {
 		document.getElementById(id).innerHTML = content
 		fadeIn(document.getElementById(id))
 	}, 650);
-	
+
 }
 if (baseMap=="osm") {
 	var mapType = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { // This is the background map
@@ -80,7 +80,7 @@ window.onload = function() {
 
 var rewind = document.getElementById('rewind'); // A separate function for stepping backwards in the story
 rewind.onclick = function() {
-    try {	
+    try {
 	num -= 1;
 	positions.clearLayers(); // Remove any markers
 	if (useMarker) {
@@ -123,4 +123,3 @@ map.on('click', function() { // Function to forward the story when clicking in t
 	}, panTime * 1000);
    }
 });
-
