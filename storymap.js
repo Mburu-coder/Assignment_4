@@ -79,9 +79,11 @@ window.onload = function() {
 };
 
 var rewind = document.getElementById('rewind'); // A separate function for stepping backwards in the story
+
 rewind.onclick = function() {
     try {
 	num -= 1;
+
 	positions.clearLayers(); // Remove any markers
 	if (useMarker) {
 	if (showPopUp) { // Add new marker and pop-up visible or not
@@ -100,6 +102,30 @@ rewind.onclick = function() {
 	}, panTime * 1000);
     }
 };
+
+var forward = document.getElementById('forward'); // A separate function for stepping forward in the story
+
+forward.onclick = function() {
+    try {
+	num += 1;
+  positions.clearLayers(); // Remove any markers
+  if (useMarker) {
+  if (showPopUp) { // Add new marker and pop-up visible or not
+    L.marker(position[num]).addTo(positions).bindPopup(bubbleText[num]).openPopup();
+  } else {
+    L.marker(position[num]).addTo(positions).bindPopup(bubbleText[num]);
+  };
+  };
+  changeStory(position[num], bubbleText[num], 'story', storyText[num]); // change the story (function)
+    } catch(err) { // If it was the first story do the same, but show the start story again.
+  num = -1,
+  positions.clearLayers(),
+  changeStory(startCoordinate, 'Startpage', 'story', startText),
+  setTimeout(function() {
+    map.setZoom(startZoom)
+  }, panTime * 1000);
+    }
+  };
 
 map.on('click', function() { // Function to forward the story when clicking in the map
    try {
