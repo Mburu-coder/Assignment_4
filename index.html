@@ -7,14 +7,12 @@
 
   <!--Importing leaflet css and js files-->
   <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css">
-    <script type="text/javascript" src ="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"> </script>
+    <script type="text/javascript" src ="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"> </script>
     </head>
 
   <!--Importing jQuery-->
   <script type="text/javascript" src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
 
-  <!--Importing stamen js library-->
-  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
 
   <body>
 
@@ -31,19 +29,20 @@
     </div>
 
     <div id = "loader">Please Wait...</div>
-      <div id = "map"> </div>
+    <div id="map" style="height: 580px"></div>
 
-      <script type = "text/javascript">
+      <!--Importing Stamen js Library-->
+      <script type="text/javascript" src = "http://maps.stamen.com/js/tile.stamen.js?v1.2.4"> </script>
 
-      <!--Variable to hold leaflet map element-->
-      var map = L.map('map',{center: [,], zoom:12});
-
-
-
-
+      <script>
+      var basemap = "terrain";
+      var startCoordinate = [-33.8056,18.3695];
+      var startZoom = 12;
       </script>
+
+      <!--Loading functions for storymap-->
+      <script scr = "storymap.js"> </script>
 
     </body>
 
   </html>
-
