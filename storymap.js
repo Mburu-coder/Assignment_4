@@ -1,4 +1,3 @@
-
 function fadeOut(element) {
     var op = element.style.opacity;
     var timer = setInterval(function () {
@@ -72,6 +71,7 @@ document.getElementById('rewind').style.color = storyTextColor;
 document.getElementById('forward').style.color = storyTextColor;
 
 
+
 var num = -1;
 var showPopUp = true; // Sets a default value, change in html-file
 window.onload = function() {
@@ -79,25 +79,9 @@ window.onload = function() {
 };
 
 var rewind = document.getElementById('rewind'); // A separate function for stepping backwards in the story
-
 rewind.onclick = function() {
     try {
 	num -= 1;
-
-  var markActiveColor = function(k) {
-        /* Removes marker-active class from all markers */
-        for (var i = 0; i < markers.length; i++) {
-          if (markers[i] && markers[i]._icon) {
-            markers[i]._icon.className = markers[i]._icon.className.replace(' marker-active', '');
-
-            if (i == k) {
-              /* Adds marker-active class, which is orange, to marker k */
-              markers[k]._icon.className += ' marker-active';
-            }
-          }
-        }
-      }
-
 	positions.clearLayers(); // Remove any markers
 	if (useMarker) {
 	if (showPopUp) { // Add new marker and pop-up visible or not
