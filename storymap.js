@@ -30,6 +30,7 @@ function changeStory(position, title, id, content) {
 	}, 650);
 
 }
+
 if (baseMap=="osm") {
 	var mapType = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { // This is the background map
 	 attribution: 'Open Street Map'
@@ -55,6 +56,7 @@ var map = L.map('map', { // Create the map and set the start position and zoom
 });
 
 L.control.scale({imperial:false, maxWidth:300}).addTo(map); // Simple scale bar
+
 
 document.getElementById('title').style.opacity = titleOpacity; // Opacity for the title element
 document.getElementById('story').style.opacity = storyOpacity; // Opacity for the story element
