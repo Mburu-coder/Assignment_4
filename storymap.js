@@ -46,7 +46,7 @@ if (baseMap=="watercolor") {
 	var mapType = new L.StamenTileLayer("watercolor");
 }
 if (baseMap=="mapbox") {
-	var mapType = L.tileLayer('https://{s}.tiles.mapbox.com/v3/username.mapid/{z}/{x}/{y}.png'); // set your own mapbox username.mapid
+	var mapType = L.tileLayer('https://{s}.tiles.mapbox.com/v3/mburumburu.mapid/{z}/{x}/{y}.png'); // set your own mapbox username.mapid
 }
 var positions = L.layerGroup([]); // This group layer holds dynamically created markers
 var map = L.map('map', { // Create the map and set the start position and zoom
@@ -69,7 +69,7 @@ for (var i = 0; 1<links.length; i++) {
 	links[i].style.color = storyTextColor;
 };
 document.getElementById('rewind').style.color = storyTextColor;
-
+document.getElementById('forward').style.color = storyTextColor;
 
 
 var num = -1;
@@ -83,6 +83,20 @@ var rewind = document.getElementById('rewind'); // A separate function for stepp
 rewind.onclick = function() {
     try {
 	num -= 1;
+
+  var markActiveColor = function(k) {
+        /* Removes marker-active class from all markers */
+        for (var i = 0; i < markers.length; i++) {
+          if (markers[i] && markers[i]._icon) {
+            markers[i]._icon.className = markers[i]._icon.className.replace(' marker-active', '');
+
+            if (i == k) {
+              /* Adds marker-active class, which is orange, to marker k */
+              markers[k]._icon.className += ' marker-active';
+            }
+          }
+        }
+      }
 
 	positions.clearLayers(); // Remove any markers
 	if (useMarker) {
