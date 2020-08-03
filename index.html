@@ -5,7 +5,7 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /><!-- Map styles -->
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /><!-- Map styles -->
 <link rel="stylesheet" href="storymap.css" /><!-- Story Map styles -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
@@ -25,7 +25,6 @@
 		bottom: 0;
 	}
 </style>
-
 </head>
 <body>
 
@@ -33,10 +32,10 @@
 <!-- The three main elements for the story map -->
 <div id="title" style = "font-size:26;"}><u>THE BEST BUILDINGS OF 2019</u></div> <!-- Change to any title you want -->
 <div id="story"></div> <!-- Holds the story html, don't change -->
-<div id="map"></div><!-- Holds the background map, don't change -->
+<div id="map"></div> <!-- Holds the background map, don't change -->
 
 <script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoibWJ1cnVtYnVydSIsImEiOiJja2RlMmRxa2EwcHlvMnRxcXJvcm13dWxqIn0.LVTLGjL-WDQh9LXOvcan7A';
+mapboxgl.accessToken = 'pk.eyJ1IjoibWJ1cnVtYnVydSIsImEiOiJja2RlMmRxa2EwcHlvMnRxcXJvcm13dWxqIn0.LVTLGjL-WDQh9LXOvcan7A';
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
@@ -64,29 +63,21 @@ map.addLayer({
 }
 });
 });
-
-var marker = new mapboxgl.Marker()
-	.setLngLat([12.6200294, 55.6846011])
-	.addTo(map);
-
 </script>
 
-
-
 <!-- Element for stepping backwards in the story -->
-<div id="rewind">Previous</div>
-
+<div id="rewind">Previous</div> <!-- Edit the text to your liking -->
 <!-- Element for stepping forward in the story-->
-<div id="forward">Next</div> 
+<div id="forward">Next</div>
 
 <!-- In this section calls are made to scripts that create the map and start the story -->
-<script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<script type="text/javascript" src="https://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
 <script>
 	var baseMap = "mapbox"; // valid options "osm", "toner", "terrain", "watercolor", "mapbox" (requires 'username.mapid' in storymap.js)
-	var startCoordinate = [55.6846011, 12.6200294]; // Change this to your own start position (lat/long)
+	var startCoordinate = [57.66818, 14.97132]; // Change this to your own start position (lat/long)
 	var startZoom = 10; // Change this to you desired start zoom level
-	var titleOpacity = 0.75; // Set the opacity for the title element
+	var titleOpacity = 0.6; // Set the opacity for the title element
 	var storyOpacity = 0.75; // Set the opacity for the story element
 	var panTime = 2; // Set the time (seconds) for panning the map
 	var titleTextColor = "#101010"; // The main title text color
@@ -111,15 +102,9 @@ var startText = "<h2><u>COPENHILL</u></h2><div class='videoWrapper'><iframe src=
 
 // position is a list with all story positions, except the start position.
 var position = [
-	[116.4105069,39.509805], // first position
-	[106.5889103,29.5616151],
-	[121.1542703,31.0594406],
-	[103.989642,1.3603912],
-	[114.1672514,22.2806658],
-	[7.1508916,58.0388876],
-	[10.3691027,60.2223203],
-	[10.3990901,63.437956],
-	[116.3245439,39.8653063],
+	[56.02856, 14.14713], // first position
+	[58.02575, 14.46584],
+	[57.66695, 14.97063]
 ];
 
 // bubbleText is a list with the content of the pop-ups for each marker.
