@@ -43,26 +43,7 @@ zoom: 13,
 center: [12.6200294, 55.6846011]
 });
 
-map.on('load', function() {
-map.addSource('mapbox-terrain', {
-type: 'vector',
-url: 'mapbox://mapbox.mapbox-terrain-v2'
-});
-map.addLayer({
-'id': 'terrain-data',
-'type': 'line',
-'source': 'mapbox-terrain',
-'source-layer': 'contour',
-'layout': {
-'line-join': 'round',
-'line-cap': 'round'
-},
-'paint': {
-'line-color': '#ff69b4',
-'line-width': 1
-}
-});
-});
+
 </script>
 
 <!-- Element for stepping backwards in the story -->
