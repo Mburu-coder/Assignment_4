@@ -74,7 +74,10 @@ var marker = new mapboxgl.Marker()
 
 
 <!-- Element for stepping backwards in the story -->
-<div id="rewind">Previous</div> <!-- Edit the text to your likeing -->
+<div id="rewind">Previous</div>
+
+<!-- Element for stepping forward in the story-->
+<div id="forward">Next</div> 
 
 <!-- In this section calls are made to scripts that create the map and start the story -->
 <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -108,16 +111,22 @@ var startText = "<h2><u>COPENHILL</u></h2><div class='videoWrapper'><iframe src=
 
 // position is a list with all story positions, except the start position.
 var position = [
-	[56.02856, 14.14713], // first position
-	[58.02575, 14.46584],
-	[57.66695, 14.97063]
+	[116.4105069,39.509805], // first position
+	[106.5889103,29.5616151],
+	[121.1542703,31.0594406],
+	[103.989642,1.3603912],
+	[114.1672514,22.2806658],
+	[7.1508916,58.0388876],
+	[10.3691027,60.2223203],
+	[10.3990901,63.437956],
+	[116.3245439,39.8653063],
 ];
 
 // bubbleText is a list with the content of the pop-ups for each marker.
 // you can use HTML here as well.
 // The showPopUp variable dictates if the pop-ups will be shown as default
-var showPopUp = true;
-var useMarker = false; //disable the use of markers
+var showPopUp = false;
+var useMarker = true; //disable the use of markers
 var bubbleText = [
 	"Naturrum<br><a href='http://www.vattenriket.kristianstad.se/naturum/'>Visit web page</a>", // first pop-up
 	"Gränna",
